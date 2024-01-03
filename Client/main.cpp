@@ -6,6 +6,27 @@
 #include <string>
 #include "my_socket.h"
 
+enum biotop
+{   LES = 0,
+    LUKA = 1,
+    SKALA = 2,
+    VODA = 3
+};
+
+struct Bunka {
+    double x;
+    double y;
+    static Bunka generate();
+};
+
+Point Bunka::generate() {
+    //TODO: nedorobene
+    static std::default_random_engine rnd;
+    static std::uniform_int_distribution<> dist(0, 4);
+    Bunka bunka = {x, y};
+    return bunka;
+}
+
 class ThreadData {
 public:
     ThreadData(long long replicationsCount, int bufferCapacity, MySocket* serverSocket);

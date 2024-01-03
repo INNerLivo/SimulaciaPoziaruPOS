@@ -1,0 +1,37 @@
+Simulácia šírenia požiaru s ukladaním máp na serveri (2 študenti).
+V rámci simulácie sa pracuje s 2D svetom pozostávajúcim z buniek reprezentujúcich 4 rôzne biotopy, ktorými sú les, lúka, skaly a voda.
+Bunky s biotopmi les a lúka sú horľavé. Ďalej sú definované nasledujúce pravidlá:
+• ak na niektorej bunke vypukne požiar, tak na susedných bunkách (uvažujeme von Neumannovo okolie)
+obsahujúcich les alebo lúku vypukne požiar za niektorého z nasledujúcich predpokladov:
+o ak veje vietor od horiacej bunky k tejto bunke, tak požiar vznikne s pravdepodobnosťou 90 %,
+o ak je bezvetrie, tak požiar vznikne s pravdepodobnosťou 20 %,
+o ak veje vietor od tejto bunky k horiacej, tak požiar vznikne s pravdepodobnosťou 2 %,
+• ak je bunka zhorená a v jej von Neumannovom okolí sa nachádza bunka predstavujúca vodu, tak
+s pravdepodobnosťou 10 % sa zmení na lúku,
+• ak bunka predstavuje lúku a v jej von Neumannovom okolí sa nachádza bunka predstavujúca les, tak
+s pravdepodobnosťou 2 % sa zmení na les,
+• počas simulácie sa v celom svete môže vyskytovať vietor, ktorého smer musí byť zobrazený
+v simulácii. Vietor má na všetkých bunkách rovnaký smer, pričom platí:
+o bezvetrie sa vyskytuje s pravdepodobnosťou 90 %,
+o vietor sa vyskytuje s pravdepodobnosťou 10 %, pričom jeho smer je rovnaký v celom svete.
+Ak sa vietor vyskytne, tak bude viať aspoň počas 3 kôl simulácie rovnakým smerom,
+Princípy operačných systémov
+3/4
+• v ľubovoľnom okamžiku simulácie je možné definovať jednu alebo viacero buniek, na ktorých práve
+vypukol požiar.
+
+
+
+Úlohou je vytvoriť aplikáciu pozostávajúcu z klientskej a serverovej časti.
+Klientska časť bude zodpovedná za beh a ovládanie simulácie,
+serverová časť bude slúžiť na uchovávanie máp 2D svetov.
+V rámci klientskej časti, v ktorej bude bežať simulácia, bude možné:
+• vytvoriť svet so zadanými rozmermi – biotop jednotlivých buniek bude možné vygenerovať náhodne
+(podľa vopred zadaného rozdelenia pravdepodobnosti) alebo ručne,
+• načítať / uložiť svet z / do lokálneho súboru,
+• zapnúť a vypnúť simuláciu v ľubovoľnom okamžiku,
+• v ľubovoľnom okamžiku definovať, ktoré bunky budú horieť,
+• pripojiť sa na server a stiahnuť si z neho príslušný svet,
+• uložiť aktuálny svet na server.
+Simulácia môže byť implementovaná v grafickom prostredí a umožňovať definovanie farieb jednotlivých
+biotopov (+ 1 študent).

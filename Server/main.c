@@ -12,6 +12,11 @@
 #include "active_socket.h"
 #include "passive_socket.h"
 
+/*
+ * Tu to na serveri budeme ukladať svety na server.
+ *
+ */
+
 typedef struct ohen {
     double x;
     double y;
