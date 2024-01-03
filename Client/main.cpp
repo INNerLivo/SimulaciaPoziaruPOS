@@ -19,8 +19,11 @@ struct Bunka {
     static Bunka generate();
 };
 
-Point Bunka::generate() {
-    //TODO: nedorobene
+Point Bunka::generate(int percentoLes, int percentoLuka, int percentoSkala, int percentoVoda) {
+    if(percentoLes+percentoLuka+percentoSkala+percentoVoda != 100) {
+        cout << "Zla percentualna hodnota";
+        return null;
+    }
     static std::default_random_engine rnd;
     static std::uniform_int_distribution<> dist(0, 4);
     Bunka bunka = {x, y};
